@@ -5,6 +5,7 @@ console.log("------module notes------");
 // console.log("filename", __filename);
 // console.log("require", require);
 console.log("module", module);
+
 setTimeout(() => {
   console.log("module", module.loaded);
 }, 2000);
