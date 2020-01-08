@@ -1,4 +1,5 @@
 const fs = require("fs");
+const colors = require("colors");
 
 //  ------ ACCESS ------
 // fs.access("./names.txt", err => {
@@ -26,7 +27,22 @@ const fs = require("fs");
 // ------ READDIR ------
 
 // console.log(fs.readdirSync("./"));
-fs.readdir("./", (err, files) => {
-  if (err) return console.log("Ops something went wrong", err);
-  console.log(files);
-});
+
+// fs.readdir("./", (err, files) => {
+//   if (err) return console.log("Ops something went wrong", err);
+//   console.log(files);
+// });
+
+// ------ READFILE ------
+
+// fs.readFile("names.txt", "utf8", (err, data) => {
+//   if (err) throw Error(err);
+//   console.log(data);
+// });
+
+try {
+  const names = fs.readFileSync("namess.txt", "utf8");
+  console.log(names);
+} catch (err) {
+  console.log("Ops! something went wrong!".red.bgWhite, err);
+}
