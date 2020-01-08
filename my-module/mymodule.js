@@ -1,1 +1,3 @@
-exports.readModuleName = console.log("mymodule");
+const name = "mymodule";
+
+exports.readModuleName = () => console.log(name);
